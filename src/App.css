@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;600;&display=swap');
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
 }
 
 .App-logo {
@@ -24,10 +27,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +34,102 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.bg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+  min-height: 600px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from((49, 49, 61, 0.6)),
+      color-stop(49%, hsla(0, 0%, 100%, 0))
+    ),
+    url(./assets/bg2.jpg);
+  background-image: linear-gradient(
+      173deg,
+      rgba(49, 49, 61, 0.6),
+      hsla(0, 0%, 100%, 0) 72%
+    ),
+    url(./assets/bg2.jpg);
+  background-position: 0px 0px, 50% 32%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, fixed;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  margin-top: 24rem;
+}
+
+.heroTitle1 {
+  margin-top: 5rem;
+  font-size: 18rem;
+  color: black;
+  letter-spacing: 0.1rem;
+}
+
+.heroTitle2 {
+  font-size: 6rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  margin: 1rem 0;
+}
+
+.heroSubtitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1.5rem 0 2rem;
+}
+
+.btn {
+  /* max-width: 15%; */
+  border: 1px solid #ffffff;
+  background: none;
+  text-transform: uppercase;
+  line-height: 44px;
+  letter-spacing: 1.1px;
+  /* font-family: 'HelveticaNeue-Light'; */
+  font-family: 'HelveticaNeue';
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  padding: 0 2rem;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.container {
+  margin: 17rem 14rem;
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  /* align-items: stretch; */
 }
