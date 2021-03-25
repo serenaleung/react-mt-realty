@@ -5,12 +5,19 @@ import './App.css';
 const realtor = require('realtorca');
 
 let opts = {
-  LongitudeMin: -79.6758985519409,
-  LongitudeMax: -79.6079635620117,
-  LatitudeMin: 43.57601549736786,
-  LatitudeMax: 43.602250137362276,
-  PriceMin: 100000,
-  PriceMax: 410000
+  // LongitudeMin: -79.6758985519409,
+  // LongitudeMax: -79.6079635620117,
+  // LatitudeMin: 43.57601549736786,
+  // LatitudeMax: 43.602250137362276,
+  // PriceMin: 100000,
+  // PriceMax: 410000 
+  LongitudeMin: -123.68060,
+  LongitudeMax: -122.58128,
+  LatitudeMin: 49.00966,
+  LatitudeMax: 49.33848,
+  PriceMin: 500000,
+  PriceMax: 2050000
+
 };
 
 console.log( "realtor.buildUrl(opts)", realtor.buildUrl(opts), {mode: "no-cors"});
@@ -24,12 +31,14 @@ console.log(realtor.optionsFromUrl("https://www.realtor.ca/Residential/Map.aspx#
   function App(props) {
 
   const [result, setResult] = useState([]);
+  const [address, setAddressFormat] = useState([]);
     
   const GetResults = () => 
     realtor.post(opts)
       .then(data => {
+        console.log("results", data.Results);
         setResult(data.Results);
-        console.log("result", result);
+        setAddressFormat(data.Results[0].Property.Address.AddressText.replace(/\|/, "\n"));
       })
       .catch(err => {
         console.log("error", err)
@@ -48,13 +57,26 @@ console.log(realtor.optionsFromUrl("https://www.realtor.ca/Residential/Map.aspx#
         </div>
         
     </div>
-    <div>Recent Listings</div>
-      <div>
-        {result.map((x) => (
-          <img src={x.Property.Photo[0].MedResPath} key={x.Id}></img>
+    <p className="containerWidth listingsTitle">Recent Listings</p>
+
+      <div className="flexRow containerWidth">
+        {result.map((x, index) => (
+            <div className="card" key={index}>
+              <img className="cardImg" src={x.Property.Photo[0].MedResPath}></img>
+              <div className="cardInfo">
+                <p className="cardTitle">{x.Property.Price}</p>
+                <p className="cardInfoAddress">{address}</p>
+                <div className="flexRow">
+                  <p className="hlInfo">{x.Building.Bedrooms} Beds</p>
+                  <p className="hlInfo">{x.Building.BathroomTotal} Baths</p>
+                  <p className="hlInfo">{x.Land.SizeTotal}</p>
+                  <p className="hlInfo">{x.Building.Type}</p>
+                </div>
+              </div>
+            </div>
         ))}
-        
       </div>
+      
     </div>
          
     )

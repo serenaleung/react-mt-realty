@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;600;&display=swap');
 
 body {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
+  font-family: 'HelveticaNeue';
 }
 
 .App-logo {
@@ -72,6 +71,8 @@ body {
 }
 
 .heroTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
   font-size: 4rem;
   color: white;
   letter-spacing: 0.1rem;
@@ -79,6 +80,8 @@ body {
 }
 
 .heroTitle1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
   margin-top: 5rem;
   font-size: 18rem;
   color: black;
@@ -86,6 +89,8 @@ body {
 }
 
 .heroTitle2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
   font-size: 6rem;
   color: white;
   letter-spacing: 0.1rem;
@@ -93,6 +98,8 @@ body {
 }
 
 .heroSubtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
   color: white;
   font-size: 1.5rem;
   font-weight: 500;
@@ -132,4 +139,63 @@ body {
   /* align-items: center; */
   justify-content: center;
   /* align-items: stretch; */
+}
+
+.listingsTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  padding: 2.2rem 0 0;
+  font-size: 2rem;
+}
+
+.containerWidth {
+  margin: 0rem 14rem;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin: 0.5rem 2rem;
+  width: 22rem;
+  box-shadow: 1rem;
+}
+
+.card:first-child {
+  margin: 0.5rem 2rem 0.5rem 0rem;
+  width: 22rem;
+}
+
+.cardImg {
+  width: 22rem;
+}
+
+.cardInfo {
+  margin: 0.5rem 2rem;
+  line-height: 1.3rem;
+}
+
+.cardInfoAddress {
+  font-size: 0.9rem;
+}
+
+.cardTitle {
+  font-family: 'HelveticaNeue';
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hlInfo {
+  padding: 0 1.8rem 0 0;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
 }
