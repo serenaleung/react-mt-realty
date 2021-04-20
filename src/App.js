@@ -36,9 +36,13 @@ console.log(realtor.optionsFromUrl("https://www.realtor.ca/Residential/Map.aspx#
   const GetResults = () => 
     realtor.post(opts)
       .then(data => {
-        console.log("results", data.Results);
         setResult(data.Results);
-        setAddressFormat(data.Results[0].Property.Address.AddressText.replace(/\|/, "\n"));
+        let formatAddr = data.Results.map(
+          x => x.Property.Address.AddressText.split(' ').map(  
+            word => isNaN(word[1]) ? word.toLowerCase().replace(word[0], word[0].toUpperCase()) : word).join(' ').replace(/\|/, "\n")  
+        )
+        setAddressFormat(formatAddr);
+        // console.log("results", data.Results);
       })
       .catch(err => {
         console.log("error", err)
@@ -52,7 +56,7 @@ console.log(realtor.optionsFromUrl("https://www.realtor.ca/Residential/Map.aspx#
           <p className="heroTitle2">Find your<br/>perfect home.</p>
           <p className="heroSubtitle">Whether you're looking for an investment or a place of your own.</p>
           {/* <button className="btn" onClick={GetResults} >We Can Help</button>  */}
-          <button className="btn" onClick={GetResults} >Search Now</button> 
+          <button className="btn" onClick={GetResults}>Search Now</button> 
            {/* <button className="btn">Get Started Now</button> */}
         </div>
         
@@ -65,7 +69,7 @@ console.log(realtor.optionsFromUrl("https://www.realtor.ca/Residential/Map.aspx#
               <img className="cardImg" src={x.Property.Photo[0].MedResPath}></img>
               <div className="cardInfo">
                 <p className="cardTitle">{x.Property.Price}</p>
-                <p className="cardInfoAddress">{address}</p>
+                <p className="cardInfoAddress">{address[index]}</p>
                 <div className="flexRow">
                   <p className="hlInfo">{x.Building.Bedrooms} Beds</p>
                   <p className="hlInfo">{x.Building.BathroomTotal} Baths</p>
