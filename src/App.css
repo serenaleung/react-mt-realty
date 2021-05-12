@@ -121,7 +121,7 @@ body {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  padding: 0 2rem;
+  padding: 0.1rem 2rem;
 }
 
 .btn:hover {
@@ -146,15 +146,17 @@ body {
   font-weight: 300;
   padding: 2.2rem 0 0;
   font-size: 2rem;
+  margin: 0rem 14rem;
 }
 
 .containerWidth {
-  margin: 0rem 14rem;
+  margin: 0rem 12.6rem;
 }
 
 .flexRow {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .flexCol {
@@ -162,29 +164,45 @@ body {
   flex-direction: column;
 }
 
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.verticalCentre {
+  align-self: center;
+}
+
 .card {
-  margin: 0.5rem 2rem;
-  width: 22rem;
+  margin: 1rem 1.4rem;
+  width: 20.8rem;
   box-shadow: 1rem;
 }
 
 .card:first-child {
-  margin: 0.5rem 2rem 0.5rem 0rem;
-  width: 22rem;
+  width: 20.8rem;
 }
 
 .cardImg {
-  width: 22rem;
+  width: 20.8rem;
+  height: 12rem;
+  object-fit: cover;
 }
 
 .cardInfo {
-  margin: 0.5rem 2rem;
+  margin: 0.5rem 1.5rem;
   line-height: 1.3rem;
 }
 
 .cardInfoAddress {
   font-size: 0.9rem;
+  text-transform: capitalize;
+  white-space: pre-line;
 }
+
+/* .cardInfoAddress::first-line {
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+} */
 
 .cardTitle {
   font-family: 'HelveticaNeue';
@@ -193,9 +211,37 @@ body {
   letter-spacing: 1px;
 }
 
-.hlInfo {
-  padding: 0 1.8rem 0 0;
+.smallCapText {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   letter-spacing: 1px;
+}
+
+.grayText {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.paddingR {
+  padding: 0 2rem 0 0;
+}
+
+input[type='text'] {
+  /* background: rgba(255, 255, 255, 0.8); */
+  border: solid 1px white;
+  padding: 1rem;
+}
+
+input[type='text'] {
+  width: 50%;
+}
+
+select {
+  border: 1px solid white;
+  vertical-align: top;
+  padding: 0.8rem;
+  height: 3.05rem;
+}
+
+.spacerR {
+  margin-right: 0.5rem;
 }

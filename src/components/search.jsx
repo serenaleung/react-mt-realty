@@ -14,7 +14,7 @@ export default function Search(props, {inputs, setInputs}) {
     return (
       <div>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="City, Neighbourhood or MLS® number" name="city" value={props.inputs.city} onChange={handleInputs}></input>
+          <input className="spacerR" type="text" placeholder="City, Neighbourhood or MLS® number" name="city" value={props.inputs.city} onChange={handleInputs}></input>
           <select name="priceMin" value={props.inputs.priceMin} onChange={handleInputs}>
             <option value="" disabled selected hidden>Min Price</option>
             <option value={0}>0</option>
@@ -145,7 +145,7 @@ export default function Search(props, {inputs, setInputs}) {
             <option value={'5-5'}>5</option>
             <option value={'5-0'}>5+</option>
           </select>
-          <select name="baths" value={props.inputs.baths} onChange={handleInputs}>
+          <select className="spacerR" name="baths" value={props.inputs.baths} onChange={handleInputs}>
             <option value="" disabled selected hidden>Baths</option>
             <option value="">Any</option>
             <option value={'1-1'}>1</option>
